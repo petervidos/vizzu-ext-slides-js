@@ -1,0 +1,117 @@
+year,result,round,sets,opponent,bagel,dbagel,count
+2005,Won,R128,3,Lars Burgsmuller,No,No,1
+2005,Won,R64,3,Xavier Malisse,No,No,1
+2005,Won,R32,3,Richard Gasquet,No,No,1
+2005,Won,R16,4,Sebastien Grosjean,Yes,No,1
+2005,Won,QF,3,David Ferrer,Yes,No,1
+2005,Won,SF,4,Roger Federer,No,No,1
+2005,Won,F,4,Mariano Puerta,No,No,1
+2006,Won,F,4,Roger Federer,No,No,1
+2006,Won,SF,3,Ivan Ljubicic,No,No,1
+2006,Won,QF,2,Novak Djokovic,No,No,1
+2006,Won,R16,4,Lleyton Hewitt,No,No,1
+2006,Won,R32,4,Paul Henri Mathieu,No,No,1
+2006,Won,R64,3,Kevin Kim,No,No,1
+2006,Won,R128,3,Robin Soderling,No,No,1
+2007,Won,F,4,Roger Federer,No,No,1
+2007,Won,SF,3,Novak Djokovic,No,No,1
+2007,Won,QF,3,Carlos Moya,Yes,No,1
+2007,Won,R16,3,Lleyton Hewitt,No,No,1
+2007,Won,R32,3,Albert Montanes,No,No,1
+2007,Won,R64,3,Flavio Cipolla,No,No,1
+2007,Won,R128,3,Juan Martin Del Potro,No,No,1
+2008,Won,F,3,Roger Federer,Yes,No,1
+2008,Won,SF,3,Novak Djokovic,No,No,1
+2008,Won,QF,3,Nicolas Almagro,No,No,1
+2008,Won,R16,3,Fernando Verdasco,Yes,No,1
+2008,Won,R32,3,Jarkko Nieminen,No,No,1
+2008,Won,R64,3,Nicolas Devilder,Yes,No,1
+2008,Won,R128,3,Thomaz Bellucci,No,No,1
+2009,Lost,R16,4,Robin Soderling,No,No,1
+2009,Won,R32,3,Lleyton Hewitt,No,No,1
+2009,Won,R64,3,Teymuraz Gabashvili,No,No,1
+2009,Won,R128,3,Marcos Daniel,No,No,1
+2010,Won,F,3,Robin Soderling,No,No,1
+2010,Won,SF,3,Jurgen Melzer,No,No,1
+2010,Won,QF,3,Nicolas Almagro,No,No,1
+2010,Won,R16,3,Thomaz Bellucci,No,No,1
+2010,Won,R32,3,Lleyton Hewitt,No,No,1
+2010,Won,R64,3,Horacio Zeballos,No,No,1
+2010,Won,R128,3,Gianni Mina,No,No,1
+2011,Won,F,4,Roger Federer,No,No,1
+2011,Won,SF,3,Andy Murray,No,No,1
+2011,Won,QF,3,Robin Soderling,No,No,1
+2011,Won,R16,3,Ivan Ljubicic,No,No,1
+2011,Won,R32,3,Antonio Veic,Yes,No,1
+2011,Won,R64,3,Pablo Andujar,No,No,1
+2011,Won,R128,5,John Isner,No,No,1
+2012,Won,F,4,Novak Djokovic,No,No,1
+2012,Won,SF,3,David Ferrer,No,No,1
+2012,Won,QF,3,Nicolas Almagro,No,No,1
+2012,Won,R16,3,Juan Monaco,Yes,Yes,1
+2012,Won,R32,3,Eduardo Schwank,No,No,1
+2012,Won,R64,3,Denis Istomin,Yes,No,1
+2012,Won,R128,3,Simone Bolelli,No,No,1
+2013,Won,F,3,David Ferrer,No,No,1
+2013,Won,SF,5,Novak Djokovic,No,No,1
+2013,Won,QF,3,Stan Wawrinka,No,No,1
+2013,Won,R16,3,Kei Nishikori,No,No,1
+2013,Won,R32,3,Fabio Fognini,No,No,1
+2013,Won,R64,4,Martin Klizan,No,No,1
+2013,Won,R128,4,Daniel Brands,No,No,1
+2014,Won,F,4,Novak Djokovic,No,No,1
+2014,Won,SF,3,Andy Murray,No,No,1
+2014,Won,QF,4,David Ferrer,Yes,No,1
+2014,Won,R16,3,Dusan Lajovic,No,No,1
+2014,Won,R32,3,Leonardo Mayer,No,No,1
+2014,Won,R64,3,Dominic Thiem,No,No,1
+2014,Won,R128,3,Robby Ginepri,Yes,Yes,1
+2015,Lost,QF,3,Novak Djokovic,No,No,1
+2015,Won,R16,4,Jack Sock,No,No,1
+2015,Won,R32,3,Andrey Kuznetsov,No,No,1
+2015,Won,R64,3,Nicolas Almagro,No,No,1
+2015,Won,R128,3,Quentin Halys,No,No,1
+2016,Retired,R32,0,Marcel Granollers,No,No,1
+2016,Won,R64,3,Facundo Bagnis,Yes,No,1
+2016,Won,R128,3,Samuel Groth,No,No,1
+2017,Won,F,3,Stan Wawrinka,No,No,1
+2017,Won,SF,3,Dominic Thiem,Yes,No,1
+2017,Won,QF,2,Pablo Carreno Busta,No,No,1
+2017,Won,R16,3,Roberto Bautista Agut,No,No,1
+2017,Won,R32,3,Nikoloz Basilashvili,Yes,Yes,1
+2017,Won,R64,3,Robin Haase,No,No,1
+2017,Won,R128,3,Benoit Paire,No,No,1
+2018,Won,F,3,Dominic Thiem,No,No,1
+2018,Won,SF,3,Juan Martin Del Potro,No,No,1
+2018,Won,QF,4,Diego Sebastian Schwartzman,No,No,1
+2018,Won,R16,3,Maximilian Marterer,No,No,1
+2018,Won,R32,3,Richard Gasquet,No,No,1
+2018,Won,R64,3,Guido Pella,No,No,1
+2018,Won,R128,3,Simone Bolelli,No,No,1
+2019,Won,F,4,Dominic Thiem,No,No,1
+2019,Won,SF,3,Roger Federer,No,No,1
+2019,Won,QF,3,Kei Nishikori,No,No,1
+2019,Won,R16,3,Juan Ignacio Londero,No,No,1
+2019,Won,R32,4,David Goffin,No,No,1
+2019,Won,R64,3,Yannick Maden,No,No,1
+2019,Won,R128,3,Yannick Hanfmann,No,No,1
+2020,Won,F,3,Novak Djokovic,Yes,No,1
+2020,Won,SF,3,Diego Sebastian Schwartzman,No,No,1
+2020,Won,QF,3,Jannik Sinner,No,No,1
+2020,Won,R16,3,Sebastian Korda,No,No,1
+2020,Won,R32,3,Stefano Travaglia,Yes,No,1
+2020,Won,R64,3,Mackenzie Mcdonald,Yes,No,1
+2020,Won,R128,3,Egor Gerasimov,No,No,1
+2021,Lost,SF,4,Novak Djokovic,No,No,1
+2021,Won,QF,4,Diego Sebastian Schwartzman,Yes,No,1
+2021,Won,R16,3,Jannik Sinner,Yes,No,1
+2021,Won,R32,3,Cameron Norrie,No,No,1
+2021,Won,R64,3,Richard Gasquet,Yes,No,1
+2021,Won,R128,3,Alexei Popyrin,No,No,1
+2022,Won,R128,3,Jordan Thompson,No,No,1
+2022,Won,R64,3,Corentin Moutet,No,No,1
+2022,Won,R32,3,Botic van de Zandschulp,No,No,1
+2022,Won,R16,5,Felix Auger-Aliassime,No,No,1
+2022,Won,QF,4,Novak Djokovic,No,No,1
+2022,Won,SF,2,Alexander Zverev,No,No,1
+2022,Won,F,3,Casper Ruud,Yes,No,1
