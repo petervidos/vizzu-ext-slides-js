@@ -197,7 +197,7 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 
 	],
 
-	[   //9. slide - Finals
+	[   //10. slide - Finals
 	chart => chart.animate({
 
 		config: {
@@ -208,7 +208,7 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 
 	],
 
-	[   //9. slide - Finals
+	[   //11. slide - Most Grand Slams in a single tournament
 	chart => chart.animate({
 		data: {
 			filter: record => record.Year != 'Total' && record.Round == 'F'
@@ -224,7 +224,8 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 		},
 		style: { plot: { marker: {
 			maxLightness: null,
-			minLightness: null 
+			minLightness: null,
+				label:{ position: 'center', format: 'dimensionsFirst'},
 		}}}
 	}),
 
@@ -233,11 +234,16 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 			filter: record => record.Year == 'Total' && record.Tournament == 'Roland Garros' && record.Player == 'Nadal'
 		},
 		config: {
-			noop: ['Order_GS','Player','Tournament'],
+			noop: ['Level','Round2'],
 			label: ['Player','Count'],
-			noop: 'Round2',
 			y: {set: ['Order_GS','Player','Tournament']},
-		}
+		},		
+	}),
+
+	chart => chart.animate({
+		config: {
+			noop: 'Level',
+		},		
 	}),
  
 	chart => chart.animate({
@@ -245,21 +251,32 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 			filter: record => record.Year == 'Total' && record.Round == 'GS'
 		},
 		config: {
-			y: {set: ['Order_GS','Player','Tournament'], range: {max: null, min: null}},
+			y: {set: ['Order_GS','Player','Tournament','Level'], range: {max: null, min: null}},
 			title: 'He won the same Grand Slam the most times' ,
-			color: 'Tournament',
+			color: 'Level',
 			legend: 'color',
-			reverse: true
+			reverse: true,
+			noop: null
 		},
-		style: { plot: { marker: {
-			maxLightness: null,
-			minLightness: null 
-		}}}
+
+	}),
+
+	],
+	
+ 	[  //12. slide - Most Titles in a single tournament
+	chart => chart.animate({
+		data: {
+			filter: record => record.Year == 'Total'
+		},
+		config: {
+			y: {set: ['Order_GS','Player','Tournament'], range: {max: 12, min: 0}},
+			title: 'He won the same ATP title the most times' ,
+		},
 	}),
 
 	],
        
-        
+       
 ]
 );
 
