@@ -264,18 +264,24 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 	],
 	
  	[  //12. slide - Most Titles in a single tournament
-	chart => chart.animate({
+	 chart => chart.animate({
+		config: {
+			x: ['Count','Order_all']
+		},
+	}),
+
+	 chart => chart.animate({
 		data: {
 			filter: record => record.Year == 'Total'
 		},
 		config: {
-			y: {set: ['Order_GS','Player','Tournament'], range: {max: 12, min: 0}},
+			y: {set: ['Order_all','Player','Tournament','Level'], range: {max: 19, min: 7}},
+			x: ['Count','Order_GS'],
 			title: 'He won the same ATP title the most times' ,
+			label: ['Player','Tournament','Count'],
 		},
 	}),
-
-	],
-       
+	],   
        
 ]
 );
