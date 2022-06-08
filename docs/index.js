@@ -23,11 +23,8 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 				legend: 'color'
 			},
 			style: {
-				title: { fontWeight: 200, },
-				plot : { marker: { colorPalette: '#1c9761FF #c47f58FF #b74c20FF',
-				colorGradient: "#b74c20FF 0.000000, #c47f58FF 0.500000, #1c9761FF 1.000000"
-				}}
-			}	
+				title: { fontWeight: 200},
+				}
         }),
     ],
 	[   //2. slide - stacked bar chart
@@ -36,7 +33,12 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 				x: ['Count','Result'],
 				color: 'Result',
 				title: 'He lost 3 matches out of 116, retired once',
-			}
+			},
+			style: {
+				plot : { marker: { colorPalette: '#C6652AFF #AD0000FF #AEAEAEFF',
+				colorGradient: "#AEAEAEFF 0.000000, #AD0000FF 0.500000, #C6652AFF 1.000000"
+				}}
+			}	
 		}),
 	],
 	[ 	  //3. slide - bubble chart - lost, retired
@@ -242,7 +244,11 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 	chart => chart.animate({
 		config: {
 			noop: 'Level',
-		},		
+		},	
+		style: {
+			plot : { marker: { colorPalette: '#CDA02E #C6652A #47B0FF #329564 #5C88F2 #91A9B5 #DBC4B1'
+			}}
+		}		
 	}),
  
 	chart => chart.animate({
@@ -257,6 +263,7 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 			reverse: true,
 			noop: null
 		},
+		
 
 	}),
 
