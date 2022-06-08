@@ -73,6 +73,7 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 				},
 				title: 'Djokovic beat him twice',
 				geometry: 'circle',
+				sort:'byValue'
 			}
 		}),        
 
@@ -83,7 +84,7 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 			config: {
 				label: null,
 				color: { set: 'Result_Num', range: { min: -1, max: 1 }},
-				noop: ['Round2','Opponent','Year'],
+				noop: ['Round2','Year'],
 				legend: 'lightness'
 			}
 		}),
@@ -100,7 +101,8 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 				orientation: 'horizontal',
 				geometry: 'rectangle',
 				title: 'Nadal\'s matches at Roland Garros',
-				legend: null
+				legend: null,
+				sort:'none'
 			}
 		}),
     ],
