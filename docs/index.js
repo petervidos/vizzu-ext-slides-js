@@ -3,108 +3,262 @@ window.onbeforeunload = function() {
 }
 
 import VizzuSlides from './vizzu-slides.js';
-import data from './data.js';
+import data from './nadal.js';
 import style from './style.js';
 
-function labelHandler(event) {
-	let Year = parseFloat(event.data.text);
-	if (!isNaN(Year) && Year > 1950 && Year < 2020 && Year % 5 != 0)
-		event.preventDefault();
-}
 
 let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 [
-    [   //1. slide
+    [   //1. slide - Összes meccs
     chart => chart.animate({
         data: Object.assign(data, {
-				filter: record => record.Function != 'Defense',
+				filter: record => record.Year != 'Total',
 			}),
             config: {
                 channels: {
-                    y: {
-						set: ['Amount[B$]', 'Function'],
-						range: {
-							min: '0%',
-							max: '100%'
-						}
-					},
-					x: {
-						set: ['Year']
-					},
-					color: 'Function'
+					x: 'Count',
+					label: 'Count'
 				},
-				title: 'U.S. Non-Defense R&D Budget by Functions',
-				geometry: 'area'
+				title: 'Nadal\'s matches at Roland Garros',
+				legend: 'color'
 			},
-            style: style,
+			style: {
+				title: { fontWeight: 200, },
+				plot : { marker: { colorPalette: '#1c9761FF #c47f58FF #b74c20FF',
+				colorGradient: "#b74c20FF 0.000000, #c47f58FF 0.500000, #1c9761FF 1.000000"
+				}}
+			}	
         }),
     ],
-    [   //2. slide
-        chart => {
-			chart.on('plot-axis-label-draw', labelHandler);
-			return chart.animate({
-				config: {
-					title: 'Share of Total Expenditures %',
-					align: 'stretch'
-				}
-			});
-		},
-    ],
-    [   //3. slide
-        chart => chart.animate({
-			data: {
-				filter: record => record.Function == 'Health' || record.Function == 'Space'
-			},
+	[   //2. slide - stacked bar chart
+	chart => chart.animate({
 			config: {
-				title: 'Compare Space & Health',
-				align: 'min',
-				split: true
-			}
-		}),        
-    
-        chart => chart.animate({
-			data: {
-				filter: record => record.Function != 'Defense',
-			},
-			config: {
-				title: 'All Non-defense Functions Side-by-Side',
-				align: 'min',
-				split: true
+				x: ['Count','Result'],
+				color: 'Result',
+				title: 'He lost 3 matches out of 116, retired once',
 			}
 		}),
-    ],
-    [   //4. slide
-        chart => chart.animate({
-			data: {
-				filter: null,
-			},
+	],
+	[ 	  //3. slide - bubble chart - lost, retired
+		chart => chart.animate({
 			config: {
-				title: 'Show Defense Expenditures',
-				split: false
+				x: ['Count','Result','Opponent','Year','Round2'],
+				label: null,
+			}
+		}),
+	
+	
+		chart => chart.animate({
+			data: {
+				filter: record => record.Year != 'Total' && ( record.Result == 'Lost' || record.Result == 'Retired')
+			},
+			style: {
+				plot : { marker: { 
+				borderWidth: 2,
+				borderOpacity: 0,
+				}}
+			}
+		}),   
+	
+
+        chart => chart.animate({
+			config: {
+				channels: {
+					x: null,
+					size: 'Count',
+					label: ['Opponent','Year'],
+					noop: ['Round2'],
+				},
+				title: 'Djokovic beat him twice',
+				geometry: 'circle',
+			}
+		}),        
+
+    ],
+	
+    [   //4. slide - matrix
+		chart => chart.animate({
+			config: {
+				label: null,
+				color: { set: 'Result_Num', range: { min: -1, max: 1 }},
+				noop: ['Round2','Year'],
+				legend: 'lightness'
 			}
 		}),
 
+	   
         chart => chart.animate({
 			data: {
-				filter: record => record.Function == 'Defense'
+				filter: record => record.Year != 'Total',
 			},
 			config: {
-				title: 'Defense Expenditures',
-				align: 'min'
+				x: 'Year',
+				y: 'Round2',
+				size: null,
+				orientation: 'horizontal',
+				geometry: 'rectangle',
+				title: 'Nadal\'s matches at Roland Garros',
+				legend: null
 			}
 		}),
     ],
-    [   //5. slide
+    
+	[   //5. slide - 3 setters
         chart => chart.animate({
-			data: {
-				filter: null,
-			},
+
 			config: {
-				title: 'Total U.S. R&D Budget',
-			}
+				lightness: '3SetWin',
+				title: '87 wins in straight sets', //78%
+			},
+			style: { plot: { marker: {
+				maxLightness: 0,
+				minLightness: 0.8 
+			}}}
 		})
 
     ],
+
+	[   //6. slide - 3 setter years
+        chart => chart.animate({
+
+			config: {
+				lightness: 'Straightwin',
+				title: 'In these 3 years he did not drop a set', //78%
+			},
+		})
+
+    ],
+
+
+
+	[   //7. slide - bagels
+	chart => chart.animate({
+
+		config: {
+			lightness: null,
+			title: '',
+		},
+		style: { plot: { marker: {
+			maxLightness: null,
+			minLightness: null 
+		}}}
+	}),
+
+	chart => chart.animate({
+
+		config: {
+			lightness: 'Bagel',
+			title: '21 times Rafa won a set 6-0',
+		},
+		style: { plot: { marker: {
+			maxLightness: 0,
+			minLightness: 0.8 
+		}}}
+	})
+
+	],
+
+	[   //8. slide - Djoko
+	chart => chart.animate({
+
+		config: {
+			lightness: null,
+			title: '',
+		},
+		style: { plot: { marker: {
+			maxLightness: null,
+			minLightness: null 
+		}}}
+	}),
+
+
+	chart => chart.animate({
+
+		config: {
+			lightness: 'Novak',
+			title: 'His most frequent opponent was Djokovic - they played 10 times',
+		},
+		style: { plot: { marker: {
+			maxLightness: 0,
+			minLightness: 0.8 
+		}}}
+	})
+
+	],
+
+	[   //9. slide - Roger
+	chart => chart.animate({
+
+		config: {
+			lightness: 'Roger',
+			title: 'Second on this list is Federer - with 6 encounters',
+		}
+	})
+
+	],
+
+	[   //9. slide - Finals
+	chart => chart.animate({
+
+		config: {
+			lightness: 'Final',
+			title: 'Rafa won all of his 14 finals',
+		}
+	})
+
+	],
+
+	[   //9. slide - Finals
+	chart => chart.animate({
+		data: {
+			filter: record => record.Year != 'Total' && record.Round == 'F'
+		},
+		config: {
+			y: {set: 'Round2', range: {max: 1, min: -5}},
+			x: "Count",
+			lightness: null,
+			noop: 'Year',
+			lightness: null,
+			label: null,
+			title: '',
+		},
+		style: { plot: { marker: {
+			maxLightness: null,
+			minLightness: null 
+		}}}
+	}),
+
+	chart => chart.animate({
+		data: {
+			filter: record => record.Year == 'Total' && record.Tournament == 'Roland Garros' && record.Player == 'Nadal'
+		},
+		config: {
+			noop: ['Order_GS','Player','Tournament'],
+			label: ['Player','Count'],
+			noop: 'Round2',
+			y: {set: ['Order_GS','Player','Tournament']},
+		}
+	}),
+ 
+	chart => chart.animate({
+		data: {
+			filter: record => record.Year == 'Total' && record.Round == 'GS'
+		},
+		config: {
+			y: {set: ['Order_GS','Player','Tournament'], range: {max: null, min: null}},
+			title: 'He won the same Grand Slam the most times' ,
+			color: 'Tournament',
+			legend: 'color',
+			reverse: true
+		},
+		style: { plot: { marker: {
+			maxLightness: null,
+			minLightness: null 
+		}}}
+	}),
+
+	],
+       
         
 ]
 );
