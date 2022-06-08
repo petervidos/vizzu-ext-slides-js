@@ -83,7 +83,7 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 			config: {
 				label: null,
 				color: { set: 'Result_Num', range: { min: -1, max: 1 }},
-				noop: ['Round2','Year'],
+				noop: ['Round2','Opponent','Year'],
 				legend: 'lightness'
 			}
 		}),
@@ -260,8 +260,8 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 			title: 'He won the same Grand Slam the most times' ,
 			color: 'Level',
 			legend: 'color',
-			reverse: true,
-			noop: null
+			noop: null,
+			sort: 'byValue'
 		},
 		
 
@@ -286,8 +286,17 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 			title: 'He won the same ATP title the most times' ,
 		},
 	}),
+
+	chart => chart.animate({
+		data: {
+			filter: record => record.Year == 'Total' && record.Count >6
+		},
+		config: {
+			y: {set: ['Order_all','Player','Tournament','Level'], range: {max: null, min: null}},
+		},
+	}),  
 	],   
-       
+    
 ]
 );
 
