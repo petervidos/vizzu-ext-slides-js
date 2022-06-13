@@ -19,11 +19,21 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 					x: 'Count',
 					label: 'Count'
 				},
-				title: 'Nadal\'s matches at Roland Garros',
+				title: 'Rafa\'s matches at Roland Garros',
 				legend: 'color'
 			},
 			style: {
-				title: { fontWeight: 200},
+				fontSize: 20,
+				title: { fontWeight: 300, paddingTop: 50, paddingBottom:0},
+					plot: {
+						paddingLeft: 20, paddingBottom: "1.5em", paddingTop: "2.5em",
+					xAxis: {
+						title: { color: '#ffffff00' },
+						label: { color: '#ffffff00'},
+						interlacing: {color: '#ffffff00' }
+					}},
+					logo: {width: 100},
+	
 				}
         }),
     ],
@@ -35,8 +45,8 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 				title: 'He lost 3 matches out of 116, retired once',
 			},
 			style: {
-				plot : { marker: { colorPalette: '#C6652AFF #AD0000FF #AEAEAEFF',
-				colorGradient: "#AEAEAEFF 0.000000, #AD0000FF 0.500000, #C6652AFF 1.000000"
+				plot : { marker: { colorPalette: '#1EB55FFF #AD0000FF #AEAEAEFF',
+				colorGradient: "#AEAEAEFF 0.000000, #AD0000FF 0.500000, #1EB55FFF 1.000000"
 				}}
 			}	
 		}),
@@ -46,24 +56,14 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 			config: {
 				x: ['Count','Result','Opponent','Year','Round2'],
 				label: null,
-			}
-		}),
-	
-	
-		chart => chart.animate({
-			data: {
-				filter: record => record.Year != 'Total' && ( record.Result == 'Lost' || record.Result == 'Retired')
 			},
-			style: {
-				plot : { marker: { 
-				borderWidth: 2,
-				borderOpacity: 0,
-				}}
-			}
-		}),   
+		},{duration:0}),
 	
 
         chart => chart.animate({
+			data: {
+				filter: record => record.Year != 'Total' && ( record.Result == 'Lost' || record.Result == 'Retired')
+			},
 			config: {
 				channels: {
 					x: null,
@@ -73,7 +73,12 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 				},
 				title: 'Djokovic beat him twice',
 				geometry: 'circle',
-				sort:'byValue'
+			},
+			style: {
+				plot : { marker: { 
+				borderWidth: 3,
+				borderOpacity: 0,
+				}}
 			}
 		}),        
 
@@ -84,11 +89,22 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 			config: {
 				label: null,
 				color: { set: 'Result_Num', range: { min: -1, max: 1 }},
-				noop: ['Round2','Year'],
+				noop: ['Year','Round2'],
 				legend: 'lightness'
-			}
+			},
+			style: {
+					plot: {
+						yAxis: {
+							label: { fontSize: '120%' },
+						},
+					xAxis: {
+						title: { color: null },
+						label: { color: null },
+						
+					}},
+					logo: {width: 0},
+				}
 		}),
-
 	   
         chart => chart.animate({
 			data: {
@@ -101,8 +117,7 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 				orientation: 'horizontal',
 				geometry: 'rectangle',
 				title: 'Nadal\'s matches at Roland Garros',
-				legend: null,
-				sort:'none'
+				legend: 'size'
 			}
 		}),
     ],
@@ -112,7 +127,7 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 
 			config: {
 				lightness: '3SetWin',
-				title: '87 wins in straight sets', //78%
+				title: '90 wins in straight sets', 
 			},
 			style: { plot: { marker: {
 				maxLightness: 0,
@@ -127,7 +142,7 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 
 			config: {
 				lightness: 'Straightwin',
-				title: 'In these 3 years he did not drop a set', //78%
+				title: 'In these 4 years he did not drop a set', 
 			},
 		})
 
@@ -225,13 +240,28 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 			label: null,
 			title: '',
 		},
-		style: { plot: { marker: {
+		style: { plot: { 
+			marker: {
+			borderWidth: 0,
+			colorPalette: '#C6652A #CDA02E #47B0FF #329564 #5C88F2 #91A9B5 #DBC4B1',
 			maxLightness: null,
 			minLightness: null,
-				label:{ position: 'center', format: 'dimensionsFirst'},
-		}}}
-	}),
+				label:{ position: 'center', format: 'dimensionsFirst'},	
 
+		},
+		xAxis: {
+			title: { color: '#ffffff00' },
+			label: { color: '#ffffff00'},
+		},
+		yAxis: {
+			title: { color: '#ffffff00' },
+			label: { color: '#ffffff00',fontSize: null},
+		}
+		},
+		logo: {width: 100},
+	}
+	}),
+ 
 	chart => chart.animate({
 		data: {
 			filter: record => record.Year == 'Total' && record.Tournament == 'Roland Garros' && record.Player == 'Nadal'
@@ -241,17 +271,13 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 			label: ['Player','Tournament','Count'],
 			y: {set: ['Order_GS','Player','Tournament']},
 		},		
-	}),
+	},{duration:0}),
 
 	chart => chart.animate({
 		config: {
 			noop: 'Level',
 		},	
-		style: {
-			plot : { marker: { colorPalette: '#CDA02E #C6652A #47B0FF #329564 #5C88F2 #91A9B5 #DBC4B1'
-			}}
-		}		
-	}),
+	},{duration:0}),
  
 	chart => chart.animate({
 		data: {
@@ -259,7 +285,7 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 		},
 		config: {
 			y: {set: ['Order_GS','Player','Tournament','Level'], range: {max: null, min: null}},
-			title: 'He won the same Grand Slam the most times' ,
+			title: 'Rafa won the same Grand Slam title the most times' ,
 			color: 'Level',
 			legend: 'color',
 			noop: null,
@@ -276,7 +302,7 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 		config: {
 			x: ['Count','Order_all']
 		},
-	}),
+	},{duration:0}),
 
 	 chart => chart.animate({
 		data: {
@@ -285,20 +311,11 @@ let myVizzuSlides = new VizzuSlides('#vizzuWrapper',
 		config: {
 			y: {set: ['Order_all','Player','Tournament','Level'], range: {max: 19, min: 7}},
 			x: ['Count','Order_GS'],
-			title: 'He won the same ATP title the most times' ,
+			title: 'Winners of the same ATP titles - Rafa is 1st, 2nd and 3rd!' ,
 		},
 	}),
-
-	chart => chart.animate({
-		data: {
-			filter: record => record.Year == 'Total' && record.Count >6
-		},
-		config: {
-			y: {set: ['Order_all','Player','Tournament','Level'], range: {max: null, min: null}},
-		},
-	}),  
 	],   
-    
+   
 ]
 );
 
