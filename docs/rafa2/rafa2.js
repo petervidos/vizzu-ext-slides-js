@@ -244,7 +244,7 @@ chart.animate({
 
     config: {
         lightness: 'Won',
-        title: 'Won 112 out of 116 ( 96.5% )', 
+        title: 'Won 112 out of 116 (96.5%)', 
     },
     style: { plot: { marker: {
         maxLightness: 0,
@@ -308,7 +308,7 @@ chart.animate({
 
     config: {
         lightness: 'Novak',
-        title: 'Played the most times against Djokovic - at 10 matches',
+        title: 'Played the most times against Djokovic - 10 matches',
     },
     style: { plot: { marker: {
         maxLightness: 0,
@@ -447,7 +447,7 @@ chart.animate({
 		config: {
 			label: ['Total_GS'],
 		},	
-        style:{plot: {marker: {label: {position: 'right', color: '#999999FF' }}}}
+        style:{plot: {marker: {label: {position: 'right', filter: 'color(#666666FF)' }}}}
 	})
         
    
